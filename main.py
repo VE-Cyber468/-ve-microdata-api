@@ -34,7 +34,7 @@ def normalise(value: str) -> str:
 
 def build_database() -> int:
     """Stream the ZIP to SQLite; replace only after a complete build."""
-    fingerprint = f'{SOURCE.stat().st_size}:{SOURCE.stat().st_mtime_ns}'
+    fingerprint = f'{SOURCE.stat().st_size}'
     if DATABASE.exists():
         with sqlite3.connect(DATABASE) as db:
             try:
